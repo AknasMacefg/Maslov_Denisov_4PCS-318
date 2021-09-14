@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Маслов_А.Н._4ПКС_318_Практические.Pages;
 
 namespace Маслов_А.Н._4ПКС_318_Практические
 {
@@ -23,6 +24,35 @@ namespace Маслов_А.Н._4ПКС_318_Практические
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+       public void  Func123()
+        {
+            using (var db = new Entities())
+            {
+                var users = db.User.AsNoTracking().FirstOrDefault(u => u.Login == "admin" && u.Password == "admin");
+            }
+            return;
+        }
+
+        private void MainFrame_OnNavigated (object sender, NavigationEventArgs e)
+        {
+            if (!(e.Content is Page page)) return;
+            this.Title = $"LESSON - {page.Title}";
+
+            if (page is AuthPage)
+            {
+                ButtonBack.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ButtonBack.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.CanGoBack) MainFrame.GoBack();
         }
     }
 }
