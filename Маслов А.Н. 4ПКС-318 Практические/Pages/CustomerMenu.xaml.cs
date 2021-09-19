@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Маслов_А.Н._4ПКС_318_Практические.Pages.UserPages;
 
 namespace Маслов_А.Н._4ПКС_318_Практические.Pages
 {
@@ -27,7 +28,7 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
 
         private void ButtonPage1_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new Page2());
+            NavigationService?.Navigate(new Calculator());
         }
 
         private void ButtonPage2_OnClick(object sender, RoutedEventArgs e)
