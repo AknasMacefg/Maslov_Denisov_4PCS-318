@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Маслов_А.Н._4ПКС_318_Практические.Pages;
+using Маслов_А.Н._4ПКС_318_Практические.Pages.UserPages;
 
 namespace Маслов_А.Н._4ПКС_318_Практические
 {
@@ -53,6 +54,12 @@ namespace Маслов_А.Н._4ПКС_318_Практические
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
             if (MainFrame.CanGoBack) MainFrame.GoBack();
+        }
+
+        private void ButtonBack_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Source = new Uri("Pages/UserPages/Calculator.xaml", UriKind.Relative);
+           
         }
     }
 }
