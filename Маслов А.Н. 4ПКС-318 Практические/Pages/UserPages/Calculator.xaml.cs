@@ -98,43 +98,57 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages.UserPag
             }
         }
 
-        
+
         // Обновляем значение правого операнда
         private void CalculateRegularOperations()
         {
-            int num1 = Int32.Parse(leftOperand);
-            int num2;
-            // И выполняем операцию
-            switch (operation)
+            try
             {
-                case "+":
-                    num2 = Int32.Parse(rightOperand);
-                    rightOperand = (num1 + num2).ToString();
-                    break;
-                case "-":
-                    num2 = Int32.Parse(rightOperand);
-                    rightOperand = (num1 - num2).ToString();
-                    break;
-                case "*":
-                    num2 = Int32.Parse(rightOperand);
-                    rightOperand = (num1 * num2).ToString();
-                    break;
-                case "/":
-                    num2 = Int32.Parse(rightOperand);
-                    rightOperand = (num1 / num2).ToString();
-                    break;
-                case "|x|":
-                    rightOperand = Math.Abs(num1).ToString();
-                    break;
-                case "ln":
-                    rightOperand = Math.Log10(num1).ToString();
-                    break;
-                case "n!":
-                    rightOperand = Factorial(num1).ToString();
-                    break;
-                case "1/x":
-                    rightOperand = ((double)(Math.Pow(num1, -1))).ToString();
-                    break;
+                int num1 = Int32.Parse(leftOperand);
+
+
+                int num2;
+                // И выполняем операцию
+                switch (operation)
+                {
+                    case "+":
+                        num2 = Int32.Parse(rightOperand);
+                        rightOperand = (num1 + num2).ToString();
+                        break;
+                    case "-":
+                        num2 = Int32.Parse(rightOperand);
+                        rightOperand = (num1 - num2).ToString();
+                        break;
+                    case "*":
+                        num2 = Int32.Parse(rightOperand);
+                        rightOperand = (num1 * num2).ToString();
+                        break;
+                    case "/":
+                        num2 = Int32.Parse(rightOperand);
+                        if (num2 == 0)
+                        {
+                            MessageBox.Show("На нуль делить нельзя!");
+                        }
+                        else
+                            rightOperand = (num1 / num2).ToString();
+                        break;
+                    case "|x|":
+                        rightOperand = Math.Abs(num1).ToString();
+                        break;
+                    case "ln":
+                        rightOperand = Math.Log10(num1).ToString();
+                        break;
+                    case "n!":
+                        rightOperand = Factorial(num1).ToString();
+                        break;
+                    case "1/x":
+                        rightOperand = ((double)(Math.Pow(num1, -1))).ToString();
+                        break;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Сначала нужно выбрать число!");
             }
         }
 
