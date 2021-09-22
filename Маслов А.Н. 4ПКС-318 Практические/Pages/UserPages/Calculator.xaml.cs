@@ -128,6 +128,7 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages.UserPag
                         if (num2 == 0)
                         {
                             MessageBox.Show("На нуль делить нельзя!");
+                            break;
                         }
                         else
                             rightOperand = (num1 / num2).ToString();
@@ -142,6 +143,12 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages.UserPag
                         rightOperand = Factorial(num1).ToString();
                         break;
                     case "1/x":
+                        if (num1 == 0)
+                        {
+                            MessageBox.Show("На нуль делить нельзя!");
+                            break;
+                        }
+                        else
                         rightOperand = ((double)(Math.Pow(num1, -1))).ToString();
                         break;
                 }
@@ -149,6 +156,7 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages.UserPag
             catch
             {
                 MessageBox.Show("Сначала нужно выбрать число!");
+                
             }
         }
 
