@@ -1,0 +1,56 @@
+﻿<Page x:Class="Маслов_А.Н._4ПКС_318_Практические.Pages.RegPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Маслов_А.Н._4ПКС_318_Практические.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="144"/>
+            <ColumnDefinition Width="176"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Логин" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Height="25"/>
+        <Label x:Name="WarningLog" Content="Логин не заполнен" Foreground="Red" Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" Height="25" Visibility="Hidden"/>
+        <TextBox x:Name="TextBoxLogin" Grid.Column="2" Height="25" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Пароль" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,30,0,0"/>
+        <Label x:Name="WarningPass" Content="Пароль не соответствует требованиям"  Foreground="Red" Grid.Column="3" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,30,10,0" Visibility="Hidden">
+            <Label.ToolTip>
+                <ToolTip>
+                    <StackPanel>
+                        <TextBlock>- пароль должен содержать 6 или более символов;</TextBlock>
+                        <TextBlock>- допускается только английская раскладка;</TextBlock>
+                        <TextBlock>- пароль должен содержать хотя бы один символ - или _ ;</TextBlock>
+                        <TextBlock>- пароль должен содержать хотя бы одну цифру.</TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </Label.ToolTip>
+        </Label>
+        <PasswordBox x:Name="PasswordBox" Grid.Column="2" Margin="0,30,0,0" Height="25" Grid.Row="1"  VerticalAlignment="Top"/>
+        <Label Content="Подтвердите пароль" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,60,0,0"/>
+        <Label x:Name="WarningRepPass" Content="Пароли не совпадают" Grid.Column="3" Foreground="Red" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,60,0,0" Visibility="Hidden"/>
+        <PasswordBox x:Name="RepPasswordBox" Grid.Column="2" Margin="0,60,0,0" Height="25" Grid.Row="1"  VerticalAlignment="Top"/>
+        <Label Content="Выберите роль" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,90,0,0"/>
+        <ComboBox  x:Name="Role" SelectedIndex="1" Grid.Column="2" Height="25" Grid.Row="1" Margin="0,90,0,0"  VerticalAlignment="Top">
+            <Label Name="Vendor" Content="Продавец"/>
+            <Label Name="Customer" Content="Покупатель"/>
+        </ComboBox>
+        <Label Content="Введите ФИО" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,120,0,0"/>
+        <Label x:Name="WarningFIO" Content="Поле не должно оставаться пустым" Grid.Column="3" Foreground="Red" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,120,0,0" Visibility="Hidden"/>
+        <TextBox x:Name="FIO" Grid.Column="2" Height="25" Grid.Row="1" Margin="0,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Content="Отмена"  Grid.Column="1" Margin="10,175,20,0" Grid.Row="1" VerticalAlignment="Top" Click="CancelButton_Click" Height="20"/>
+        <Button Content="Регистрация" Grid.Column="2" Margin="0,175,0,0" Grid.Row="1" VerticalAlignment="Top" Click="RegistrationButton_Click" Height="20" />
+
+
+    </Grid>
+</Page>

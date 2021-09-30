@@ -33,6 +33,13 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages.UserPag
         public Calculator()
         {
             InitializeComponent();
+            var uri = new Uri("DictionaryCalc.xaml", UriKind.Relative);
+            // загружаем словарь ресурсов
+            ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            // очищаем коллекцию ресурсов приложения
+            Application.Current.Resources.Clear();
+            // добавляем загруженный словарь ресурсов          
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
             foreach (UIElement c in LayoutRoot.Children)
             {
                 if (c is Button)

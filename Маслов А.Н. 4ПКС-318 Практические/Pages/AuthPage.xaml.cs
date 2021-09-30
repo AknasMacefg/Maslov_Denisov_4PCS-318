@@ -24,6 +24,14 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
         public AuthPage()
         {
             InitializeComponent();
+            var uri = new Uri("Dictionary.xaml", UriKind.Relative);
+            // загружаем словарь ресурсов
+            ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            // очищаем коллекцию ресурсов приложения
+            Application.Current.Resources.Clear();
+            // добавляем загруженный словарь ресурсов          
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
+
         }
 
         private void ButtonEnter_OnClick (object sender, RoutedEventArgs e)
@@ -56,6 +64,9 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
                     case "Director":
                         NavigationService?.Navigate(new CustomerMenu());
                         break;
+                    case "Продавец":
+                        NavigationService?.Navigate(new CustomerMenu());
+                        break;
 
                 }
             }
@@ -63,7 +74,7 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
 
         private void ButtonRegistration_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            NavigationService?.Navigate(new RegPage());
         }
     }
 }
