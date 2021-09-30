@@ -24,6 +24,7 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
         public CustomerMenu()
         {
             InitializeComponent();
+            
         }
 
         private void ButtonPage1_OnClick(object sender, RoutedEventArgs e)
