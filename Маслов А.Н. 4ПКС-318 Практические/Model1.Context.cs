@@ -15,6 +15,13 @@ namespace Маслов_А.Н._4ПКС_318_Практические
     
     public partial class Entities : DbContext
     {
+        private static Entities _context;
+        public static Entities GetContext()
+        {
+            if (_context == null)
+                _context = new Entities();
+            return _context;
+        }
         public Entities()
             : base("name=Entities")
         {
@@ -24,7 +31,8 @@ namespace Маслов_А.Н._4ПКС_318_Практические
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+       
+
         public virtual DbSet<Customers> Customers { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Products> Products { get; set; }

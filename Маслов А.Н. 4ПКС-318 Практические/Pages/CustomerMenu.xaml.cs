@@ -29,17 +29,17 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
 
         private void ButtonPage1_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new Calculator());
+            NavigationService?.Navigate(new Employees());
         }
 
         private void ButtonPage2_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new AuthPage());
+            NavigationService?.Navigate(new Clients());
         }
 
         private void ButtonPage3_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new Menu());
+            NavigationService?.Navigate(new Products());
         }
     }
 }

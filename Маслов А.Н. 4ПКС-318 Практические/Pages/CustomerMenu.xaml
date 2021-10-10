@@ -19,8 +19,8 @@
             <ColumnDefinition Width="257"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Переход 1" Click="ButtonPage1_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Top"/>
-        <Button Content="Переход 2" Click="ButtonPage2_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Center"/>
-        <Button Content="Переход 3" Click="ButtonPage3_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Bottom"/>
+        <Button Content="Сотрудники" Click="ButtonPage1_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Top"/>
+        <Button Content="Клиенты" Click="ButtonPage2_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Center"/>
+        <Button Content="Товар" Click="ButtonPage3_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>

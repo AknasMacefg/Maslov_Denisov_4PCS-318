@@ -78,14 +78,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddCust.xaml.cs">
+      <DependentUpon>AddCust.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddReg.xaml.cs">
+      <DependentUpon>AddReg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddSupp.xaml.cs">
+      <DependentUpon>AddSupp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Clients.xaml.cs">
+      <DependentUpon>Clients.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CustomerMenu.xaml.cs">
       <DependentUpon>CustomerMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Employees.xaml.cs">
+      <DependentUpon>Employees.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegPage.xaml.cs">
       <DependentUpon>RegPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Products.xaml.cs">
+      <DependentUpon>Products.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserPages\Calculator.xaml.cs">
       <DependentUpon>Calculator.xaml</DependentUpon>
@@ -131,7 +149,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddCust.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddReg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddSupp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Clients.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,7 +173,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Employees.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Products.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

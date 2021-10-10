@@ -17,6 +17,16 @@
         <Setter Property="Background" Value="#B5D5CA"/>
         <Setter Property="BorderBrush" Value="#D1EEFC"/>
     </Style>
-    
-   
+    <Style TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="#000000"/>
+    </Style>
+    <Style TargetType="{x:Type DatePicker}">
+        <Setter Property="Background" Value="#D1EEFC"/>
+        <Setter Property="Foreground" Value="#000000"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="#000000"/>
+    </Style>
+
+
 </ResourceDictionary>
