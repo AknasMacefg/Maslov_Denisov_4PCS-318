@@ -21,11 +21,11 @@ namespace Маслов_А.Н._4ПКС_318_Практические
             this.Supplies = new HashSet<Supplies>();
         }
     
-        public int ID_сотрудника { get; set; }
-        public string Имя { get; set; }
-        public string Фамилия { get; set; }
-        public string Должность { get; set; }
-        public string Телефон { get; set; }
+        public int ID_Employer { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Position { get; set; }
+        public string Phone_number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sellings> Sellings { get; set; }

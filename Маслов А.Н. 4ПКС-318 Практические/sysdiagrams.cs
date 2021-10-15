@@ -12,21 +12,12 @@ namespace Маслов_А.Н._4ПКС_318_Практические
     using System;
     using System.Collections.Generic;
     
-    public partial class Suppliers
+    public partial class sysdiagrams
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Suppliers()
-        {
-            this.Supplies = new HashSet<Supplies>();
-        }
-    
-        public int ID_supplier { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> INN { get; set; }
-        public string Adress { get; set; }
-        public string Phone_Number { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Supplies> Supplies { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

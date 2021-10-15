@@ -16,20 +16,19 @@ using System.Windows.Shapes;
 namespace Маслов_А.Н._4ПКС_318_Практические.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Employees.xaml
+    /// Логика взаимодействия для Clients.xaml
     /// </summary>
-    public partial class Employees : Page
+    public partial class ClientsPage : Page
     {
-        public Employees()
+        public ClientsPage()
         {
             InitializeComponent();
-            DataGridEmployees.ItemsSource = Entities.GetContext().Employees.ToList();
+            DataGridEmployees.ItemsSource = Entities.GetContext().Customers.ToList();
         }
 
-
-        private void ButtonEdit_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonAdd_OnClick(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new AddCust());
         }
 
         private void ButtonDel_OnClick(object sender, RoutedEventArgs e)
@@ -37,9 +36,9 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
 
         }
 
-        private void ButtonAdd_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonEdit_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new AddReg());
+
         }
     }
 }

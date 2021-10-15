@@ -14,11 +14,11 @@ namespace Маслов_А.Н._4ПКС_318_Практические
     
     public partial class Selling_Details
     {
-        public int ID_продажи { get; set; }
-        public int ID_товара { get; set; }
-        public Nullable<decimal> Цена { get; set; }
-        public Nullable<int> Количество { get; set; }
-        public Nullable<double> Скидка { get; set; }
+        public int ID_sell { get; set; }
+        public int ID_product { get; set; }
+        public Nullable<decimal> Price { get; set; }
+        public Nullable<int> Count { get; set; }
+        public Nullable<double> Discount { get; set; }
     
         public virtual Products Products { get; set; }
         public virtual Sellings Sellings { get; set; }

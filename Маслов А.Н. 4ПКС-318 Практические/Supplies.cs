@@ -20,10 +20,10 @@ namespace Маслов_А.Н._4ПКС_318_Практические
             this.Supplies_Details = new HashSet<Supplies_Details>();
         }
     
-        public int ID_заказа { get; set; }
-        public int ID_поставщика { get; set; }
-        public int ID_сотрудника { get; set; }
-        public Nullable<System.DateTime> Дата { get; set; }
+        public int ID_supply { get; set; }
+        public int ID_suppliers { get; set; }
+        public int ID_employer { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     
         public virtual Employees Employees { get; set; }
         public virtual Suppliers Suppliers { get; set; }

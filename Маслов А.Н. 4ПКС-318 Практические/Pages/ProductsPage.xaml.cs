@@ -18,9 +18,9 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
     /// <summary>
     /// Логика взаимодействия для Supplies.xaml
     /// </summary>
-    public partial class Products : Page
+    public partial class ProductsPage : Page
     {
-        public Products()
+        public ProductsPage()
         {
             InitializeComponent();
             DataGridEmployees.ItemsSource = Entities.GetContext().Products.ToList();

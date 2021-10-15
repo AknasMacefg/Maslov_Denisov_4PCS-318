@@ -29,10 +29,10 @@
         <TextBlock Text="Фамилия"  Grid.Row="2" Margin="10,10,0,0" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" Width="362" Height="57" VerticalAlignment="Top"/>
         <TextBlock Text="Должность"  Grid.Row="3" Margin="10,10,0,0" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2" Height="56" VerticalAlignment="Top" HorizontalAlignment="Left" Width="362"/>
         <TextBlock Text="Телефон"  Grid.Row="4" Margin="10,10,0,0" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" Width="362" Height="56" VerticalAlignment="Top"/>
-            <TextBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="37" VerticalAlignment="Top"/>
-            <TextBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,9,0,0" Height="37" VerticalAlignment="Top"/>
-            <TextBox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="36" VerticalAlignment="Top"/>
-            <TextBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="36" VerticalAlignment="Top"/>
+        <TextBox x:Name="name" Text="{Binding FirstName}"  Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="37" VerticalAlignment="Top"/>
+        <TextBox x:Name="lastname" Text="{Binding LastName}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,9,0,0" Height="37" VerticalAlignment="Top"/>
+        <TextBox x:Name="work" Text="{Binding Position}" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="36" VerticalAlignment="Top"/>
+        <TextBox x:Name="number" Text="{Binding Phone_number}" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="36" VerticalAlignment="Top"/>
 
             <Button Name="ButtonSave" Content="Сохранить" Grid.Row="7" Grid.ColumnSpan="3" Click="ButtonSave_OnClick"/>
         </Grid>

@@ -7,86 +7,96 @@
       <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customers">
           <Key>
-            <PropertyRef Name="ID покупателя" />
+            <PropertyRef Name="ID_customer" />
           </Key>
-          <Property Name="ID покупателя" Type="int" Nullable="false" />
-          <Property Name="Имя" Type="nvarchar" MaxLength="50" />
-          <Property Name="Фамилия" Type="nvarchar" MaxLength="50" />
-          <Property Name="Телефон" Type="nvarchar" MaxLength="50" />
-          <Property Name="Адрес" Type="nvarchar(max)" />
+          <Property Name="ID_customer" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone_number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adress" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Employees">
           <Key>
-            <PropertyRef Name="ID сотрудника" />
+            <PropertyRef Name="ID_Employer" />
           </Key>
-          <Property Name="ID сотрудника" Type="int" Nullable="false" />
-          <Property Name="Имя" Type="nvarchar" MaxLength="50" />
-          <Property Name="Фамилия" Type="nvarchar" MaxLength="50" />
-          <Property Name="Должность" Type="nvarchar" MaxLength="50" />
-          <Property Name="Телефон" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_Employer" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone_number" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
-            <PropertyRef Name="ID товара" />
+            <PropertyRef Name="ID_product" />
           </Key>
-          <Property Name="ID товара" Type="int" Nullable="false" />
-          <Property Name="Название" Type="nvarchar" MaxLength="50" />
-          <Property Name="Цена" Type="money" />
-          <Property Name="Количество на складе" Type="int" />
-          <Property Name="Гарантия" Type="date" />
+          <Property Name="ID_product" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Count" Type="int" />
+          <Property Name="Guarantee" Type="date" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "Маслов/Денисов_КомпьютерныйСалон.dbo.Selling Details" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="Selling Details">
           <Key>
-            <PropertyRef Name="ID продажи" />
-            <PropertyRef Name="ID товара" />
+            <PropertyRef Name="ID_sell" />
+            <PropertyRef Name="ID_product" />
           </Key>
-          <Property Name="ID продажи" Type="int" Nullable="false" />
-          <Property Name="ID товара" Type="int" Nullable="false" />
-          <Property Name="Цена" Type="money" />
-          <Property Name="Количество" Type="int" />
-          <Property Name="Скидка" Type="float" />
+          <Property Name="ID_sell" Type="int" Nullable="false" />
+          <Property Name="ID_product" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Count" Type="int" />
+          <Property Name="Discount" Type="float" />
         </EntityType>
         <EntityType Name="Sellings">
           <Key>
-            <PropertyRef Name="ID продажи" />
+            <PropertyRef Name="ID_sell" />
           </Key>
-          <Property Name="ID продажи" Type="int" Nullable="false" />
-          <Property Name="ID покупателя" Type="int" Nullable="false" />
-          <Property Name="ID сотрудника" Type="int" Nullable="false" />
-          <Property Name="Дата" Type="datetime" />
+          <Property Name="ID_sell" Type="int" Nullable="false" />
+          <Property Name="ID_customer" Type="int" Nullable="false" />
+          <Property Name="ID_employer" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
         </EntityType>
         <EntityType Name="Suppliers">
           <Key>
-            <PropertyRef Name="ID_поставщика" />
+            <PropertyRef Name="ID_supplier" />
           </Key>
-          <Property Name="ID_поставщика" Type="int" Nullable="false" />
-          <Property Name="Имя" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ИНН" Type="int" />
-          <Property Name="Адрес" Type="nvarchar(max)" />
-          <Property Name="Телефон" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_supplier" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="INN" Type="int" />
+          <Property Name="Adress" Type="nvarchar(max)" />
+          <Property Name="Phone_Number" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Supplies">
           <Key>
-            <PropertyRef Name="ID заказа" />
+            <PropertyRef Name="ID_supply" />
           </Key>
-          <Property Name="ID заказа" Type="int" Nullable="false" />
-          <Property Name="ID поставщика" Type="int" Nullable="false" />
-          <Property Name="ID сотрудника" Type="int" Nullable="false" />
-          <Property Name="Дата" Type="datetime" />
+          <Property Name="ID_supply" Type="int" Nullable="false" />
+          <Property Name="ID_suppliers" Type="int" Nullable="false" />
+          <Property Name="ID_employer" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "Маслов/Денисов_КомпьютерныйСалон.dbo.Supplies Details" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="Supplies Details">
           <Key>
-            <PropertyRef Name="ID заказа" />
-            <PropertyRef Name="ID товара" />
+            <PropertyRef Name="ID_supply" />
+            <PropertyRef Name="ID_products" />
           </Key>
-          <Property Name="ID заказа" Type="int" Nullable="false" />
-          <Property Name="ID товара" Type="int" Nullable="false" />
-          <Property Name="Цена" Type="money" />
-          <Property Name="Количество" Type="int" />
+          <Property Name="ID_supply" Type="int" Nullable="false" />
+          <Property Name="ID_products" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Count" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -103,10 +113,10 @@
           <End Role="Selling Details" Type="Self.Selling Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
-              <PropertyRef Name="ID товара" />
+              <PropertyRef Name="ID_product" />
             </Principal>
             <Dependent Role="Selling Details">
-              <PropertyRef Name="ID товара" />
+              <PropertyRef Name="ID_product" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -115,10 +125,10 @@
           <End Role="Selling Details" Type="Self.Selling Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sellings">
-              <PropertyRef Name="ID продажи" />
+              <PropertyRef Name="ID_sell" />
             </Principal>
             <Dependent Role="Selling Details">
-              <PropertyRef Name="ID продажи" />
+              <PropertyRef Name="ID_sell" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -127,10 +137,10 @@
           <End Role="Sellings" Type="Self.Sellings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customers">
-              <PropertyRef Name="ID покупателя" />
+              <PropertyRef Name="ID_customer" />
             </Principal>
             <Dependent Role="Sellings">
-              <PropertyRef Name="ID покупателя" />
+              <PropertyRef Name="ID_customer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -139,10 +149,10 @@
           <End Role="Sellings" Type="Self.Sellings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
-              <PropertyRef Name="ID сотрудника" />
+              <PropertyRef Name="ID_Employer" />
             </Principal>
             <Dependent Role="Sellings">
-              <PropertyRef Name="ID сотрудника" />
+              <PropertyRef Name="ID_employer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -151,10 +161,10 @@
           <End Role="Supplies Details" Type="Self.Supplies Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
-              <PropertyRef Name="ID товара" />
+              <PropertyRef Name="ID_product" />
             </Principal>
             <Dependent Role="Supplies Details">
-              <PropertyRef Name="ID товара" />
+              <PropertyRef Name="ID_products" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -163,10 +173,10 @@
           <End Role="Supplies Details" Type="Self.Supplies Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplies">
-              <PropertyRef Name="ID заказа" />
+              <PropertyRef Name="ID_supply" />
             </Principal>
             <Dependent Role="Supplies Details">
-              <PropertyRef Name="ID заказа" />
+              <PropertyRef Name="ID_supply" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -175,10 +185,10 @@
           <End Role="Supplies" Type="Self.Supplies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
-              <PropertyRef Name="ID сотрудника" />
+              <PropertyRef Name="ID_Employer" />
             </Principal>
             <Dependent Role="Supplies">
-              <PropertyRef Name="ID сотрудника" />
+              <PropertyRef Name="ID_employer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -187,10 +197,10 @@
           <End Role="Supplies" Type="Self.Supplies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Suppliers">
-              <PropertyRef Name="ID_поставщика" />
+              <PropertyRef Name="ID_supplier" />
             </Principal>
             <Dependent Role="Supplies">
-              <PropertyRef Name="ID поставщика" />
+              <PropertyRef Name="ID_suppliers" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -201,22 +211,23 @@
           <EntitySet Name="Sellings" EntityType="Self.Sellings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplies" EntityType="Self.Supplies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Selling Details" EntityType="Self.Selling Details" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [Selling Details].[ID продажи] AS [ID продажи], 
-    [Selling Details].[ID товара] AS [ID товара], 
-    [Selling Details].[Цена] AS [Цена], 
-    [Selling Details].[Количество] AS [Количество], 
-    [Selling Details].[Скидка] AS [Скидка]
+    [Selling Details].[ID_sell] AS [ID_sell], 
+    [Selling Details].[ID_product] AS [ID_product], 
+    [Selling Details].[Price] AS [Price], 
+    [Selling Details].[Count] AS [Count], 
+    [Selling Details].[Discount] AS [Discount]
     FROM [dbo].[Selling Details] AS [Selling Details]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="Supplies Details" EntityType="Self.Supplies Details" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [Supplies Details].[ID заказа] AS [ID заказа], 
-    [Supplies Details].[ID товара] AS [ID товара], 
-    [Supplies Details].[Цена] AS [Цена], 
-    [Supplies Details].[Количество] AS [Количество]
+    [Supplies Details].[ID_supply] AS [ID_supply], 
+    [Supplies Details].[ID_products] AS [ID_products], 
+    [Supplies Details].[Price] AS [Price], 
+    [Supplies Details].[Count] AS [Count]
     FROM [dbo].[Supplies Details] AS [Supplies Details]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Selling Details_Products" Association="Self.FK_Selling Details_Products">
@@ -259,73 +270,83 @@
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Customers">
           <Key>
-            <PropertyRef Name="ID_покупателя" />
+            <PropertyRef Name="ID_customer" />
           </Key>
-          <Property Name="ID_покупателя" Type="Int32" Nullable="false" />
-          <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Адрес" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_customer" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Sellings" Relationship="Self.FK_Sellings_Customers" FromRole="Customers" ToRole="Sellings" />
         </EntityType>
         <EntityType Name="Employees">
           <Key>
-            <PropertyRef Name="ID_сотрудника" />
+            <PropertyRef Name="ID_Employer" />
           </Key>
-          <Property Name="ID_сотрудника" Type="Int32" Nullable="false" />
-          <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Должность" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Employer" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Sellings" Relationship="Self.FK_Sellings_Employees" FromRole="Employees" ToRole="Sellings" />
           <NavigationProperty Name="Supplies" Relationship="Self.FK_Supplies_Employees" FromRole="Employees" ToRole="Supplies" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
-            <PropertyRef Name="ID_товара" />
+            <PropertyRef Name="ID_product" />
           </Key>
-          <Property Name="ID_товара" Type="Int32" Nullable="false" />
-          <Property Name="Название" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Цена" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Количество_на_складе" Type="Int32" />
-          <Property Name="Гарантия" Type="DateTime" Precision="0" />
+          <Property Name="ID_product" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="Guarantee" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Selling_Details" Relationship="Self.FK_Selling_Details_Products" FromRole="Products" ToRole="Selling_Details" />
           <NavigationProperty Name="Supplies_Details" Relationship="Self.FK_Supplies_Details_Products" FromRole="Products" ToRole="Supplies_Details" />
         </EntityType>
         <EntityType Name="Sellings">
           <Key>
-            <PropertyRef Name="ID_продажи" />
+            <PropertyRef Name="ID_sell" />
           </Key>
-          <Property Name="ID_продажи" Type="Int32" Nullable="false" />
-          <Property Name="ID_покупателя" Type="Int32" Nullable="false" />
-          <Property Name="ID_сотрудника" Type="Int32" Nullable="false" />
-          <Property Name="Дата" Type="DateTime" Precision="3" />
+          <Property Name="ID_sell" Type="Int32" Nullable="false" />
+          <Property Name="ID_customer" Type="Int32" Nullable="false" />
+          <Property Name="ID_employer" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_Sellings_Customers" FromRole="Sellings" ToRole="Customers" />
           <NavigationProperty Name="Employees" Relationship="Self.FK_Sellings_Employees" FromRole="Sellings" ToRole="Employees" />
           <NavigationProperty Name="Selling_Details" Relationship="Self.FK_Selling_Details_Sellings" FromRole="Sellings" ToRole="Selling_Details" />
         </EntityType>
         <EntityType Name="Suppliers">
           <Key>
-            <PropertyRef Name="ID_поставщика" />
+            <PropertyRef Name="ID_supplier" />
           </Key>
-          <Property Name="ID_поставщика" Type="Int32" Nullable="false" />
-          <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ИНН" Type="Int32" />
-          <Property Name="Адрес" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_supplier" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INN" Type="Int32" />
+          <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Supplies" Relationship="Self.FK_Supplies_Suppliers" FromRole="Suppliers" ToRole="Supplies" />
         </EntityType>
         <EntityType Name="Supplies">
           <Key>
-            <PropertyRef Name="ID_заказа" />
+            <PropertyRef Name="ID_supply" />
           </Key>
-          <Property Name="ID_заказа" Type="Int32" Nullable="false" />
-          <Property Name="ID_поставщика" Type="Int32" Nullable="false" />
-          <Property Name="ID_сотрудника" Type="Int32" Nullable="false" />
-          <Property Name="Дата" Type="DateTime" Precision="3" />
+          <Property Name="ID_supply" Type="Int32" Nullable="false" />
+          <Property Name="ID_suppliers" Type="Int32" Nullable="false" />
+          <Property Name="ID_employer" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Employees" Relationship="Self.FK_Supplies_Employees" FromRole="Supplies" ToRole="Employees" />
           <NavigationProperty Name="Suppliers" Relationship="Self.FK_Supplies_Suppliers" FromRole="Supplies" ToRole="Suppliers" />
           <NavigationProperty Name="Supplies_Details" Relationship="Self.FK_Supplies_Details_Supplies" FromRole="Supplies" ToRole="Supplies_Details" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -339,26 +360,26 @@
         </EntityType>
         <EntityType Name="Selling_Details">
           <Key>
-            <PropertyRef Name="ID_продажи" />
-            <PropertyRef Name="ID_товара" />
+            <PropertyRef Name="ID_sell" />
+            <PropertyRef Name="ID_product" />
           </Key>
-          <Property Name="ID_продажи" Type="Int32" Nullable="false" />
-          <Property Name="ID_товара" Type="Int32" Nullable="false" />
-          <Property Name="Цена" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Количество" Type="Int32" />
-          <Property Name="Скидка" Type="Double" />
+          <Property Name="ID_sell" Type="Int32" Nullable="false" />
+          <Property Name="ID_product" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="Discount" Type="Double" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Selling_Details_Products" FromRole="Selling_Details" ToRole="Products" />
           <NavigationProperty Name="Sellings" Relationship="Self.FK_Selling_Details_Sellings" FromRole="Selling_Details" ToRole="Sellings" />
         </EntityType>
         <EntityType Name="Supplies_Details">
           <Key>
-            <PropertyRef Name="ID_заказа" />
-            <PropertyRef Name="ID_товара" />
+            <PropertyRef Name="ID_supply" />
+            <PropertyRef Name="ID_products" />
           </Key>
-          <Property Name="ID_заказа" Type="Int32" Nullable="false" />
-          <Property Name="ID_товара" Type="Int32" Nullable="false" />
-          <Property Name="Цена" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Количество" Type="Int32" />
+          <Property Name="ID_supply" Type="Int32" Nullable="false" />
+          <Property Name="ID_products" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Count" Type="Int32" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Supplies_Details_Products" FromRole="Supplies_Details" ToRole="Products" />
           <NavigationProperty Name="Supplies" Relationship="Self.FK_Supplies_Details_Supplies" FromRole="Supplies_Details" ToRole="Supplies" />
         </EntityType>
@@ -367,10 +388,10 @@
           <End Role="Sellings" Type="Self.Sellings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Customers">
-              <PropertyRef Name="ID_покупателя" />
+              <PropertyRef Name="ID_customer" />
             </Principal>
             <Dependent Role="Sellings">
-              <PropertyRef Name="ID_покупателя" />
+              <PropertyRef Name="ID_customer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -379,10 +400,10 @@
           <End Role="Sellings" Type="Self.Sellings" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
-              <PropertyRef Name="ID_сотрудника" />
+              <PropertyRef Name="ID_Employer" />
             </Principal>
             <Dependent Role="Sellings">
-              <PropertyRef Name="ID_сотрудника" />
+              <PropertyRef Name="ID_employer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -391,10 +412,10 @@
           <End Role="Supplies" Type="Self.Supplies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employees">
-              <PropertyRef Name="ID_сотрудника" />
+              <PropertyRef Name="ID_Employer" />
             </Principal>
             <Dependent Role="Supplies">
-              <PropertyRef Name="ID_сотрудника" />
+              <PropertyRef Name="ID_employer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -403,10 +424,10 @@
           <End Role="Selling_Details" Type="Self.Selling_Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
-              <PropertyRef Name="ID_товара" />
+              <PropertyRef Name="ID_product" />
             </Principal>
             <Dependent Role="Selling_Details">
-              <PropertyRef Name="ID_товара" />
+              <PropertyRef Name="ID_product" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -415,10 +436,10 @@
           <End Role="Supplies_Details" Type="Self.Supplies_Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
-              <PropertyRef Name="ID_товара" />
+              <PropertyRef Name="ID_product" />
             </Principal>
             <Dependent Role="Supplies_Details">
-              <PropertyRef Name="ID_товара" />
+              <PropertyRef Name="ID_products" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -427,10 +448,10 @@
           <End Role="Selling_Details" Type="Self.Selling_Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sellings">
-              <PropertyRef Name="ID_продажи" />
+              <PropertyRef Name="ID_sell" />
             </Principal>
             <Dependent Role="Selling_Details">
-              <PropertyRef Name="ID_продажи" />
+              <PropertyRef Name="ID_sell" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -439,10 +460,10 @@
           <End Role="Supplies" Type="Self.Supplies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Suppliers">
-              <PropertyRef Name="ID_поставщика" />
+              <PropertyRef Name="ID_supplier" />
             </Principal>
             <Dependent Role="Supplies">
-              <PropertyRef Name="ID_поставщика" />
+              <PropertyRef Name="ID_suppliers" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -451,10 +472,10 @@
           <End Role="Supplies_Details" Type="Self.Supplies_Details" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Supplies">
-              <PropertyRef Name="ID_заказа" />
+              <PropertyRef Name="ID_supply" />
             </Principal>
             <Dependent Role="Supplies_Details">
-              <PropertyRef Name="ID_заказа" />
+              <PropertyRef Name="ID_supply" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -465,6 +486,7 @@
           <EntitySet Name="Sellings" EntityType="Self.Sellings" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" />
           <EntitySet Name="Supplies" EntityType="Self.Supplies" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="Selling_Details" EntityType="Self.Selling_Details" />
           <EntitySet Name="Supplies_Details" EntityType="Self.Supplies_Details" />
@@ -510,64 +532,75 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="Model.Customers">
               <MappingFragment StoreEntitySet="Customers">
-                <ScalarProperty Name="ID_покупателя" ColumnName="ID покупателя" />
-                <ScalarProperty Name="Имя" ColumnName="Имя" />
-                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
-                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
-                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="Model.Employees">
               <MappingFragment StoreEntitySet="Employees">
-                <ScalarProperty Name="ID_сотрудника" ColumnName="ID сотрудника" />
-                <ScalarProperty Name="Имя" ColumnName="Имя" />
-                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
-                <ScalarProperty Name="Должность" ColumnName="Должность" />
-                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+                <ScalarProperty Name="ID_Employer" ColumnName="ID_Employer" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="Model.Products">
               <MappingFragment StoreEntitySet="Products">
-                <ScalarProperty Name="ID_товара" ColumnName="ID товара" />
-                <ScalarProperty Name="Название" ColumnName="Название" />
-                <ScalarProperty Name="Цена" ColumnName="Цена" />
-                <ScalarProperty Name="Количество_на_складе" ColumnName="Количество на складе" />
-                <ScalarProperty Name="Гарантия" ColumnName="Гарантия" />
+                <ScalarProperty Name="ID_product" ColumnName="ID_product" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Guarantee" ColumnName="Guarantee" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sellings">
             <EntityTypeMapping TypeName="Model.Sellings">
               <MappingFragment StoreEntitySet="Sellings">
-                <ScalarProperty Name="ID_продажи" ColumnName="ID продажи" />
-                <ScalarProperty Name="ID_покупателя" ColumnName="ID покупателя" />
-                <ScalarProperty Name="ID_сотрудника" ColumnName="ID сотрудника" />
-                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="ID_sell" ColumnName="ID_sell" />
+                <ScalarProperty Name="ID_customer" ColumnName="ID_customer" />
+                <ScalarProperty Name="ID_employer" ColumnName="ID_employer" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Suppliers">
             <EntityTypeMapping TypeName="Model.Suppliers">
               <MappingFragment StoreEntitySet="Suppliers">
-                <ScalarProperty Name="ID_поставщика" ColumnName="ID_поставщика" />
-                <ScalarProperty Name="Имя" ColumnName="Имя" />
-                <ScalarProperty Name="ИНН" ColumnName="ИНН" />
-                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
-                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+                <ScalarProperty Name="ID_supplier" ColumnName="ID_supplier" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Supplies">
             <EntityTypeMapping TypeName="Model.Supplies">
               <MappingFragment StoreEntitySet="Supplies">
-                <ScalarProperty Name="ID_заказа" ColumnName="ID заказа" />
-                <ScalarProperty Name="ID_поставщика" ColumnName="ID поставщика" />
-                <ScalarProperty Name="ID_сотрудника" ColumnName="ID сотрудника" />
-                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="ID_supply" ColumnName="ID_supply" />
+                <ScalarProperty Name="ID_suppliers" ColumnName="ID_suppliers" />
+                <ScalarProperty Name="ID_employer" ColumnName="ID_employer" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -585,21 +618,21 @@
           <EntitySetMapping Name="Selling_Details">
             <EntityTypeMapping TypeName="Model.Selling_Details">
               <MappingFragment StoreEntitySet="Selling Details">
-                <ScalarProperty Name="ID_продажи" ColumnName="ID продажи" />
-                <ScalarProperty Name="ID_товара" ColumnName="ID товара" />
-                <ScalarProperty Name="Цена" ColumnName="Цена" />
-                <ScalarProperty Name="Количество" ColumnName="Количество" />
-                <ScalarProperty Name="Скидка" ColumnName="Скидка" />
+                <ScalarProperty Name="ID_sell" ColumnName="ID_sell" />
+                <ScalarProperty Name="ID_product" ColumnName="ID_product" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Supplies_Details">
             <EntityTypeMapping TypeName="Model.Supplies_Details">
               <MappingFragment StoreEntitySet="Supplies Details">
-                <ScalarProperty Name="ID_заказа" ColumnName="ID заказа" />
-                <ScalarProperty Name="ID_товара" ColumnName="ID товара" />
-                <ScalarProperty Name="Цена" ColumnName="Цена" />
-                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="ID_supply" ColumnName="ID_supply" />
+                <ScalarProperty Name="ID_products" ColumnName="ID_products" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,10 +14,10 @@ namespace Маслов_А.Н._4ПКС_318_Практические
     
     public partial class Supplies_Details
     {
-        public int ID_заказа { get; set; }
-        public int ID_товара { get; set; }
-        public Nullable<decimal> Цена { get; set; }
-        public Nullable<int> Количество { get; set; }
+        public int ID_supply { get; set; }
+        public int ID_products { get; set; }
+        public Nullable<decimal> Price { get; set; }
+        public Nullable<int> Count { get; set; }
     
         public virtual Products Products { get; set; }
         public virtual Supplies Supplies { get; set; }
