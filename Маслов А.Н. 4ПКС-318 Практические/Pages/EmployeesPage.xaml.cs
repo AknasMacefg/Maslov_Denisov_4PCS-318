@@ -30,17 +30,35 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
 
         private void ButtonEdit_OnClick(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new AddReg((sender as Button).DataContext as Employees));
         }
 
         private void ButtonDel_OnClick(object sender, RoutedEventArgs e)
         {
+            var EmpForRemoving = DataGridEmployees.SelectedItems.Cast<Employees>().ToList();
+
+            if (MessageBox.Show($"Вы точно хотите удалить записи в количестве {EmpForRemoving.Count()} элементов?", "Внимание",
+                            MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Entities.GetContext().Employees.RemoveRange(EmpForRemoving);
+                    Entities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные успешно удалены!");
+
+                    DataGridEmployees.ItemsSource = Entities.GetContext().Employees.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
 
         }
 
         private void ButtonAdd_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new AddReg());
+            NavigationService?.Navigate(new AddReg(null));
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Маслов_А.Н._4ПКС_318_Практические.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ClientsPage">
+      Title="ClientsPage" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid>
@@ -14,7 +14,7 @@
                 <RowDefinition Height="377*"/>
                 <RowDefinition Height="73*"/>
             </Grid.RowDefinitions>
-            <DataGrid Grid.Row="0" Name="DataGridEmployees" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid Grid.Row="0" Name="DataGridCust" AutoGenerateColumns="False" IsReadOnly="True" >
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="50"/>

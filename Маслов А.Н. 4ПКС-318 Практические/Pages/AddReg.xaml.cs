@@ -23,9 +23,11 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
     {
 
         private Employees _currentEmp = new Employees();
-        public AddReg()
+        public AddReg(Employees selectedEmployer)
         {
             InitializeComponent();
+            if (selectedEmployer != null)
+                _currentEmp = selectedEmployer;
             DataContext = _currentEmp;
         }
        

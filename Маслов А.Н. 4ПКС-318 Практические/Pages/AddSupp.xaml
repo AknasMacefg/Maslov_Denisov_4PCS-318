@@ -29,10 +29,10 @@
         <TextBlock Text="Цена"  Grid.Row="2" Margin="10,10,0,0" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" Width="362" Height="57" VerticalAlignment="Top"/>
         <TextBlock Text="Количество"   Grid.Row="3" Margin="10,10,0,0" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2" Height="56" VerticalAlignment="Top" HorizontalAlignment="Left" Width="362"/>
         <TextBlock Text="Гарантия"   Grid.Row="4" Margin="10,10,0,0" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" Width="362" Height="56" VerticalAlignment="Top"/>
-        <TextBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="37" VerticalAlignment="Top"/>
-        <TextBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,9,0,0" Height="37" VerticalAlignment="Top"/>
-        <TextBox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="36" VerticalAlignment="Top"/>
-        <DatePicker Name="DPDate" Grid.Row="4" Grid.Column="2" SelectedDateFormat="Short" Margin="10,6,251,50" Grid.RowSpan="2"/>
+        <TextBox Grid.Row="1" Text="{Binding Name}" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="37" VerticalAlignment="Top"/>
+        <TextBox Grid.Row="2" Text="{Binding Price}" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,9,0,0" Height="37" VerticalAlignment="Top"/>
+        <TextBox Grid.Row="3" Text="{Binding Count}" Grid.Column="2" HorizontalAlignment="Left" Width="299" Margin="10,10,0,0" Height="36" VerticalAlignment="Top"/>
+        <DatePicker Name="DPDate" Text="{Binding Guarantee}" Grid.Row="4" Grid.Column="2" SelectedDateFormat="Short" Margin="10,6,251,50" Grid.RowSpan="2"/>
 
         <Button Name="ButtonSave" Content="Сохранить" Grid.Row="7" Grid.ColumnSpan="3" Click="ButtonSave_OnClick"/>
     </Grid>
