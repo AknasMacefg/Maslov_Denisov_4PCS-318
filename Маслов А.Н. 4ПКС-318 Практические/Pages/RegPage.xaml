@@ -42,8 +42,9 @@
         <PasswordBox x:Name="RepPasswordBox" Grid.Column="2" Margin="0,60,0,0" Height="25" Grid.Row="1"  VerticalAlignment="Top"/>
         <Label Content="Выберите роль" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,90,0,0"/>
         <ComboBox  x:Name="Role" SelectedIndex="1" Grid.Column="2" Height="25" Grid.Row="1" Margin="0,90,0,0"  VerticalAlignment="Top">
-            <Label Name="Vendor" Content="Продавец"/>
-            <Label Name="Customer" Content="Покупатель"/>
+            <Label Name="Seller" Content="Seller"/>
+            <Label Name="Customer" Content="Customer"/>
+            <Label Name="Director" Content="Director"/>
         </ComboBox>
         <Label Content="Введите ФИО" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,120,0,0"/>
         <Label x:Name="WarningFIO" Content="Поле не должно оставаться пустым" Grid.Column="3" Foreground="Red" Grid.Row="1" VerticalAlignment="Top" Height="25" Margin="0,120,0,0" Visibility="Hidden"/>

@@ -19,9 +19,9 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
     /// <summary>
     /// Логика взаимодействия для CustomerMenu.xaml
     /// </summary>
-    public partial class CustomerMenu : Page
+    public partial class AdminMenu : Page
     {
-        public CustomerMenu()
+        public AdminMenu()
         {
             InitializeComponent();
             
@@ -29,14 +29,17 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
 
         private void ButtonPage1_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new UserPage());
+            NavigationService?.Navigate(new EmployeesPage());
         }
 
         private void ButtonPage2_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new ProductsForCustomerPage());
+            NavigationService?.Navigate(new ClientsPage());
         }
 
-       
+        private void ButtonPage3_OnClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new ProductsPage());
+        }
     }
 }

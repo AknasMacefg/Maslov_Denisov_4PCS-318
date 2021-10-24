@@ -100,11 +100,14 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
                 Entities db = new Entities();
                 User userObject = new User
                 {
+                    ID = Convert.ToInt32(db.User.Count()),
                     FIO = FIO.Text,
                     Login = TextBoxLogin.Text,
                     Password = PasswordBox.Password,
                     Role = Role.Text
+                   
                 };
+               
                 db.User.Add(userObject);
                 db.SaveChanges();
                 MessageBox.Show("Пользователь успешно зарегистрирован!");

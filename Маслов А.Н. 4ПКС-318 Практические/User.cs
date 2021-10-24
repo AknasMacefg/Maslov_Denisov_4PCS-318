@@ -19,5 +19,6 @@ namespace Маслов_А.Н._4ПКС_318_Практические
         public string Role { get; set; }
         public string FIO { get; set; }
         public int ID { get; set; }
+        public string Photo { get; set; }
     }
 }

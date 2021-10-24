@@ -49,7 +49,13 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
                 return;
             }
             if (_currentEmp.ID_Employer == 0)
+            {
+                Entities db = new Entities();
+                _currentEmp.ID_Employer = Convert.ToInt32(db.Employees.Count());
                 Entities.GetContext().Employees.Add(_currentEmp);
+            }
+     
+               
             try
             {
                 Entities.GetContext().SaveChanges();

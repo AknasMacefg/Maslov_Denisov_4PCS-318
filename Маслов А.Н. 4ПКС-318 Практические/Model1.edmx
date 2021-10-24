@@ -34,6 +34,7 @@
           <Property Name="Price" Type="money" />
           <Property Name="Count" Type="int" />
           <Property Name="Guarantee" Type="date" />
+          <Property Name="Photo" Type="nvarchar(max)" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "Маслов/Денисов_КомпьютерныйСалон.dbo.Selling Details" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -107,6 +108,7 @@
           <Property Name="Role" Type="nvarchar(max)" />
           <Property Name="FIO" Type="nvarchar(max)" />
           <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_Selling Details_Products">
           <End Role="Products" Type="Self.Products" Multiplicity="1" />
@@ -300,6 +302,7 @@
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Count" Type="Int32" />
           <Property Name="Guarantee" Type="DateTime" Precision="0" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Selling_Details" Relationship="Self.FK_Selling_Details_Products" FromRole="Products" ToRole="Selling_Details" />
           <NavigationProperty Name="Supplies_Details" Relationship="Self.FK_Supplies_Details_Products" FromRole="Products" ToRole="Supplies_Details" />
         </EntityType>
@@ -357,6 +360,7 @@
           <Property Name="Role" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="FIO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Selling_Details">
           <Key>
@@ -559,6 +563,7 @@
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="Guarantee" ColumnName="Guarantee" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -612,6 +617,7 @@
                 <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="FIO" ColumnName="FIO" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

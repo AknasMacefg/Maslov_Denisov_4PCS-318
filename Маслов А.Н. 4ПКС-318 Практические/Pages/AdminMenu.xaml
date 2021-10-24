@@ -1,4 +1,4 @@
-﻿<Page x:Class="Маслов_А.Н._4ПКС_318_Практические.Pages.CustomerMenu"
+﻿<Page x:Class="Маслов_А.Н._4ПКС_318_Практические.Pages.AdminMenu"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Маслов_А.Н._4ПКС_318_Практические.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CustomerMenu">
+      Title="AdminrMenu">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -19,7 +19,8 @@
             <ColumnDefinition Width="257"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Пользователи" Click="ButtonPage1_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Top"/>
-        <Button Content="Товар" Click="ButtonPage2_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Center" Margin="0,40,0,10"/>
+        <Button Content="Сотрудники" Click="ButtonPage1_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Top"/>
+        <Button Content="Клиенты" Click="ButtonPage2_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Center"/>
+        <Button Content="Товар" Click="ButtonPage3_OnClick" Grid.Column="1" Grid.Row="1" Height="20" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>

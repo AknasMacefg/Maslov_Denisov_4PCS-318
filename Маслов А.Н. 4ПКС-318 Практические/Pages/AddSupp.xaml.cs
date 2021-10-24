@@ -47,7 +47,11 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
                 return;
             }
             if (_currentProd.ID_product == 0)
+            {
+                Entities db = new Entities();
+                _currentProd.ID_product = Convert.ToInt32(db.Products.Count());
                 Entities.GetContext().Products.Add(_currentProd);
+            }
             try
             {
                 Entities.GetContext().SaveChanges();

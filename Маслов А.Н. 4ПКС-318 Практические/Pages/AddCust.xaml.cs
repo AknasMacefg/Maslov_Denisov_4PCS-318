@@ -44,7 +44,11 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
                 return;
             }
             if (_currentCust.ID_customer == 0)
+            {
+                Entities db = new Entities();
+                _currentCust.ID_customer = Convert.ToInt32(db.Customers.Count());
                 Entities.GetContext().Customers.Add(_currentCust);
+            }
             try
             {
                 Entities.GetContext().SaveChanges();

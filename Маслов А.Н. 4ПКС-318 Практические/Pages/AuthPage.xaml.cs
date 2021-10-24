@@ -62,9 +62,9 @@ namespace Маслов_А.Н._4ПКС_318_Практические.Pages
                         NavigationService?.Navigate(new CustomerMenu());
                         break;
                     case "Director":
-                        NavigationService?.Navigate(new CustomerMenu());
+                        NavigationService?.Navigate(new AdminMenu());
                         break;
-                    case "Продавец":
+                    case "Seller":
                         NavigationService?.Navigate(new CustomerMenu());
                         break;
 
