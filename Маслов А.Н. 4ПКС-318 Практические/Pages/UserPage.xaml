@@ -13,6 +13,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
         <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" Name="ListUser" Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -46,6 +47,24 @@
             </ListView.ItemsPanel>
 
         </ListView>
+        <WrapPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Введите ФИО для поиска" Margin="0 0 10 0" VerticalAlignment="Center"></Label>
+            <TextBox x:Name="SearchText" Width="300" VerticalContentAlignment="Center" TextChanged="SearchText_TextChanged" ></TextBox>
+            <Label Content="Сортировать по ФИО" Margin="40 0 10 0" VerticalAlignment="Center"></Label>
+            <ComboBox x:Name="SortType" VerticalAlignment="Center"  Width="150" SelectionChanged="SortType_SelectionChanged">
+                <ComboBoxItem>
+                    <TextBlock x:Name="Descending">По убыванию</TextBlock>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock x:Name="Ascending">По возрастанию</TextBlock>
+                </ComboBoxItem>
+            </ComboBox>
+            <Label Content="Роль:" Margin="40 0 10 0" VerticalAlignment="Center"/>
+            <CheckBox x:Name="Customers"  Content=" Только покупатели" Margin="10 0 10 0" VerticalAlignment="Center" Checked="Customers_Checked" Unchecked="Customers_Unchecked"  />
+            <CheckBox x:Name="Sellers"  Content="Только продавцы" Margin="10 0 10 0" VerticalAlignment="Center" Checked="Sellers_Checked" Unchecked="Sellers_Unchecked"/>
+            <CheckBox x:Name="Admins"  Content="Только директора" Margin="10 0 10 0" VerticalAlignment="Center" Checked="Admins_Checked" Unchecked="Admins_Unchecked"/>
+            <Button Content="Очистить всё" Padding="3 0 3 0" Margin="10 0 10 0"  VerticalAlignment="Center" Click="Button_Click"/>
+        </WrapPanel>
     </Grid>
 
 </Page>

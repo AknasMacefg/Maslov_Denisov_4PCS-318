@@ -47,5 +47,24 @@
             </ListView.ItemsPanel>
 
         </ListView>
+        <WrapPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Поиск по названию товара" Margin="0 0 10 0" VerticalAlignment="Center"></Label>
+            <TextBox x:Name="SearchText" Width="300" VerticalContentAlignment="Center" TextChanged="SearchText_TextChanged" ></TextBox>
+         
+            <Label Content="Сортировать по цене" Margin="40 0 10 0" VerticalAlignment="Center"></Label>
+            <ComboBox x:Name="SortPrice" VerticalAlignment="Center"  Width="150" SelectionChanged="SortPrice_SelectionChanged">
+                    <ComboBoxItem>
+                        <TextBlock x:Name="DescendingPrice">По убыванию</TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock x:Name="AscendingPrice">По возрастанию</TextBlock>
+                    </ComboBoxItem>
+                </ComboBox>
+            <Label Content="Фильтр:" Margin="40 0 10 0" VerticalAlignment="Center"/>
+            <CheckBox x:Name="OnlyRAM"  Content="только ОЗУ" Margin="10 0 10 0" VerticalAlignment="Center" Checked="OnlyRAM_Checked" Unchecked="OnlyRAM_Unchecked"  />
+            <CheckBox x:Name="OnlyGPU"  Content="только видеокарты" Margin="10 0 10 0" VerticalAlignment="Center" Checked="OnlyGPU_Checked" Unchecked="OnlyGPU_Unchecked"/>
+            <CheckBox x:Name="OnlyProcessors"  Content="только процессоры" Margin="10 0 10 0" VerticalAlignment="Center" Checked="OnlyProcessors_Checked" Unchecked="OnlyProcessors_Unchecked"/>
+            <Button Content="Очистить всё" Padding="3 0 3 0" Margin="10 0 10 0"  VerticalAlignment="Center" Click="Button_Click"/>
+        </WrapPanel>
     </Grid>
 </Page>
